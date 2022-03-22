@@ -1,7 +1,11 @@
+import "../CSS/homepage.css"
+
 const HomePage = () => {
     return (
-        <main>
-
-        </main>
+        <body>
+            <h1> chitter </h1>
+        </body>
     )
 }
+
+export default HomePage
