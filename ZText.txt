@@ -50,3 +50,10 @@ I want to log out of Chitter
 - Peeps (posts to chitter) have the name of the trainee and their user handle - attach username to message
 
 - Your README should indicate the technologies used, and give instructions on how to install and run the tests.
+
+
+<a class="navbar-brand" href="#"> &nbsp; </a>
+ <a class="nav-link"> Home </a>
+                        <button class="navbar-toggler" type="button" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarAltMArkup" aria-expanded="false" aria-label="Toggle navigation" >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>

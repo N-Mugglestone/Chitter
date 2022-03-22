@@ -1,0 +1,25 @@
+header{
+    background-color: greenyellow;
+    text-align: center;
+    color: black;
+text-indent: 50px;
+}
+
+.navbar{
+list-style-type: none;
+margin: 0;
+padding: 0;
+justify-content: space-between;
+text-align: center;
+margin-top: 80px;
+word-spacing: 20px;
+}
+
+.nav li{
+    display: inline;
+    padding-right: 80px;
+}
+
+.h1{
+    text-align: center;
+}
