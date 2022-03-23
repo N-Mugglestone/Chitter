@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 
+function Peeps(props) {
+    const { user, timeStamp, message } = props
 
-
-const Peeps = () => {
     return (
         <>
             <div class="card">
@@ -22,13 +22,11 @@ const Peeps = () => {
 
 
 
-//  make this component into a prop
 
-
-// Peep.PropTypes = {
-//     user: PropTypes.string,
-//     timeStamp: PropTypes.string
-// }
+Peeps.propTypes = {
+    user: PropTypes.string,
+    timeStamp: PropTypes.string
+}
 
 export default Peeps;
 
