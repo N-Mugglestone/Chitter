@@ -8,8 +8,8 @@ function Peeps(props) {
         <>
             <div class="card">
                 <div class="container">
-                    <h4> User Name </h4>
-                    <h5> Time Stamp</h5>
+                    <h4> Placeholder user </h4>
+                    <h5> PLaceolder Time Stamp</h5>
                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                         Quaerat porro necessitatibus dolor veniam ipsum placeat quo
                         dolores dolore. Modi, dicta. </p>

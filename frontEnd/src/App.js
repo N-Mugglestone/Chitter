@@ -6,6 +6,11 @@ import Header from '../src/Components/utils/header'
 import HomePage from "./Components/homePage";
 
 function App() {
+
+
+
+
+
   return (
     <>
       <head> CHITTER </head>
@@ -18,3 +23,16 @@ function App() {
 
 
 export default App;
+
+
+
+// function App() {
+//   return (
+//     <>
+//       <head> CHITTER </head>
+//       <Header />
+//       <HomePage />
+//       <Footer />
+//     </>
+//   )
+// };
