@@ -57,3 +57,8 @@ I want to log out of Chitter
                         <button class="navbar-toggler" type="button" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarAltMArkup" aria-expanded="false" aria-label="Toggle navigation" >
                             <span class="navbar-toggler-icon"></span>
                         </button>
+
+
+
+to input messages maybe make a constructor that takes in id, name, etc from json file and print that way? 
+or create prop to take the specifics.
