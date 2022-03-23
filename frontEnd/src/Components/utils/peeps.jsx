@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 
-// function Peep(props) {
-//     const { user, timeStamp, message } = props
-// }
 
 
 const Peeps = () => {
@@ -16,11 +13,17 @@ const Peeps = () => {
                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                         Quaerat porro necessitatibus dolor veniam ipsum placeat quo
                         dolores dolore. Modi, dicta. </p>
+
                 </div>
             </div>
         </>
     )
 }
+
+
+
+//  make this component into a prop
+
 
 // Peep.PropTypes = {
 //     user: PropTypes.string,
