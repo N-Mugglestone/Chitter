@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import Tweet from './Tweet.jsx';
-import './Timeline.css';
+import Peeps from '../Components/utils/peeps';
+
 
 function TimeStamp({ peeps }) {
     return (
