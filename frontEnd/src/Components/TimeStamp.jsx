@@ -4,7 +4,7 @@ import Peeps from '../Components/utils/peeps';
 
 function TimeStamp({ peeps }) {
     return (
-        <ul className="timeline">
+        <ul className="timeStamp">
             {peeps
                 .sort((a, b) => new Date(b.created_on) - new Date(a.created_on))
                 .map(({ id, user, created_on, content }) => (
@@ -23,3 +23,6 @@ TimeStamp.propTypes = {
 };
 
 export default TimeStamp;
+
+//moment - <p className="peepDate4">
+// <p className="peepDate4>" Posted:  moment(peep.timestamp).format("Do MMMM YYYY, h:mm a") }

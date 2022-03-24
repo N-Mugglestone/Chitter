@@ -1,6 +1,8 @@
 import '../Components/CSS/homepage.css'
 import Peeps from './utils/peeps'
 import peepPhoto1 from '../images/peepPhoto1.jpg'
+import peepPhoto2 from '../images/peepPhoto2.jpg'
+import peepPhoto3 from '../images/peepPhoto3.jpg'
 
 
 const HomePage = () => {
@@ -10,6 +12,8 @@ const HomePage = () => {
             <Peeps />
             <Peeps />
             <img src={peepPhoto1} alt='The sky' align='right' height='400px' />
+            <img src={peepPhoto2} alt='The sky' align='right' height='400px' />
+            <img src={peepPhoto3} alt='The sky' align='right' height='400px' />
         </body>
     )
 }

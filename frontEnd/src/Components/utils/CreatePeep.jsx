@@ -2,7 +2,7 @@ import { useState } from "react"
 import PropTypes from "prop-types";
 
 
-const CreatePeep = () => {
+const CreatePeep = ({ onSubmit }) => {
     const [writerValue, setwriterValue] = useState('');
 
     const handleWriterValueChange = (e) => {
@@ -12,7 +12,7 @@ const CreatePeep = () => {
     const handleSubmit = (e) => {
         e.preventDefault('')
 
-        outSubmit(writerValue);
+        onSubmit(writerValue);
         setwriterValue('');
     };
 
@@ -31,7 +31,7 @@ const CreatePeep = () => {
     )
 }
 
-ComposeForm.propTypes = {
+CreatePeep.propTypes = {
     onSubmit: PropTypes.func.isRequired,
 }
 
