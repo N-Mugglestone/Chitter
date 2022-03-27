@@ -1,4 +1,4 @@
-// import mongoose form 'mongoose';         ------apply mongoose to work 
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
     name: 'string',
