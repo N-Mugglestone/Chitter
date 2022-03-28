@@ -7,7 +7,7 @@ import cors from 'cors';
 import { home } from './routes/home.js';
 import { login } from './routes/login.js';
 import { register } from './routes/register.js';
-import { addPeep } from './routes/addPeep.js'
+import { addPeep } from './routes/AddPeep.js'
 
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
@@ -23,7 +23,7 @@ app.use(cors());
 app.use('/', home)
 app.use('/login', login)
 app.use('/register', register)
-app.use('/addPeep', addPeep)
+app.use('/add-peep', addPeep)
 
 
 const main = async () => {

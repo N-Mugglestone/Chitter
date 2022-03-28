@@ -3,28 +3,28 @@
         "firstName": "Daniel",
         "secondName": "Scott",
         "userHandle": "@Magicman",
-        "peepCreatedDate": "2022-03-04T21:00:00.000Z",
-        "peepBody": "Let the day begin "
+        "timeStamp": "2022-03-04T21:00:00.000Z",
+        "peepContent": "Let the day begin "
     },
     {
         "firstName": "Leanne",
         "secondName": "Jenkins",
         "userHandle": "@jenjen",
-        "peepCreatedDate": "2022-02-13T21:00:00.000Z",
-        "peepBody": "Interesting weather we are having today"
+        "timeStamp": "2022-02-13T21:00:00.000Z",
+        "peepContent": "Interesting weather we are having today"
     },
     {
         "firstName": "Kara",
         "secondName": "Leek",
         "userHandle": "@leekyK",
-        "peepCreatedDate": "2022-01-27T10:00:00.000Z",
-        "peepBody": "Who is up for a party?"
+        "timeStamp": "2022-01-27T10:00:00.000Z",
+        "peepContent": "Who is up for a party?"
     },
     {
         "firstName": "Leanne",
         "secondName": "Jenkins",
         "userHandle": "@jenjen",
-        "peepCreatedDate": "2022-01-02T08:00:00.000Z",
-        "peepBody": "Bed time with a good book"
+        "timeStamp": "2022-01-02T08:00:00.000Z",
+        "peepContent": "Bed time with a good book"
     }
 ]

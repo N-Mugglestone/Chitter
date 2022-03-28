@@ -4,14 +4,14 @@ import Peeps from "./Peeps";
 const Wall = ({ peepsArray }) => {
 
     const peeps = peepsArray?.map(peep => {
-        return <Peeps key={peep?._id} peepContent={peep} />
+        return <Peeps key={peep?._id} peepBody={peep} />
     })
 
     return (
         <>
-            <div>
-                {Peeps}
-            </div>
+
+            {peeps}
+
         </>
     )
 }

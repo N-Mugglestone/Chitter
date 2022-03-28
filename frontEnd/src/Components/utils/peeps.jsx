@@ -2,19 +2,19 @@ import PropTypes from 'prop-types'
 import { useState } from 'react';
 
 
-function Peeps({ peepContent }) {
-    // const { user, timeStamp, message } = props
-    const { firstName, lastName, userHandle, timeStamp, peepBody } = peepContent
+function Peeps({ peepBody }) {
+
+    const { firstName, lastName, userHandle, timeStamp, peepContent } = peepBody;
     const formattedDate = new Date(timeStamp).toDateString()
 
     return (
         <>
             <div class="card">
                 <div class="container">
-                    <h4 className='PeepName'>(firstName) &nspw; (lastName)</h4>
-                    <h2>(userHandle)</h2>
-                    <h5> (formattedDate)</h5>
-                    <p> (peepBody) </p>
+                    <h4 className='PeepName'>{firstName} &nspw; {lastName}</h4>
+                    <h2>{userHandle}</h2>
+                    <h5> {formattedDate}</h5>
+                    <p> {peepContent} </p>
 
                 </div>
             </div>
