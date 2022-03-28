@@ -1,5 +1,5 @@
 import '../Components/CSS/homepage.css'
-import Peeps from './utils/peeps'
+import Peeps from './utils/Peeps.jsx'
 import peepPhoto1 from '../images/peepPhoto1.jpg'
 import peepPhoto2 from '../images/peepPhoto2.jpg'
 import peepPhoto3 from '../images/peepPhoto3.jpg'
@@ -9,11 +9,23 @@ const HomePage = () => {
     return (
         <body>
             <h1> CHITTER </h1>
-            <Peeps />
-            <Peeps />
-            <img src={peepPhoto1} alt='The sky' align='right' height='400px' />
-            <img src={peepPhoto2} alt='The sky' align='right' height='400px' />
-            <img src={peepPhoto3} alt='The sky' align='right' height='400px' />
+            <div class="row">
+                <div class="column">
+                    <img src={peepPhoto1} alt='The sky' />
+                    <img src={peepPhoto2} alt='The human' />
+                    <img src={peepPhoto3} alt='The dog' />
+                </div>
+                <div class="column">
+                    <Peeps />
+                    <Peeps />
+                </div>
+
+                <div class="column">
+
+                </div>
+            </div>
+
+
         </body>
     )
 }
@@ -45,3 +57,7 @@ export default HomePage
 // const [peep, setPeeps] = useState([
 //     { title: 'mew peep', body: 'lorem ipsum...', author: 'harry', id: 1 }
 // ]);
+
+    // < img src = { peepPhoto1 } alt = 'The sky' float = 'right' height = '400px' />
+    //         <img src={peepPhoto2} alt='The dog' align='right' height='400px' />
+    //         <img src={peepPhoto3} alt='The human' align='right' height='400px' />

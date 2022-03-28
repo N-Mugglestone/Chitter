@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Peeps from '../Components/utils/peeps';
+import Peeps from '../Components/utils/Peeps.jsx';
 
 
 function TimeStamp({ peeps }) {

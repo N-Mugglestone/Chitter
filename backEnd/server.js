@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import { application } from 'express';
 import cors from 'cors';
 
-// import HomePage from '../frontEnd/src/Components/homePage';
+import { homePage } from './routes/homepage.js';
 import { login } from './routes/login.js';
 import { register } from './routes/register.js';
 import { addPeep } from './routes/addPeep.js'
@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
 
-app.use('/', HomePage)
+app.use('/', homePage)
 app.use('/login', login)
 app.use('/register', register)
 app.use('/addPeep', addPeep)
