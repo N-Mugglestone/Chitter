@@ -1,5 +1,5 @@
 import '../Components/CSS/homepage.css'
-import Peeps from './utils/Peeps.jsx'
+import Peeps from './utils/peeps.jsx'
 import peepPhoto1 from '../images/peepPhoto1.jpg'
 import peepPhoto2 from '../images/peepPhoto2.jpg'
 import peepPhoto3 from '../images/peepPhoto3.jpg'
@@ -21,13 +21,9 @@ const HomePage = () => {
                     <Wall />
                 </div>
 
-                <div class="column">
-
-                </div>
             </div>
 
-
-        </body>
+        </body >
     )
 }
 

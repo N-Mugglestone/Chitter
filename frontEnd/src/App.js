@@ -4,7 +4,7 @@ import { useState } from "react";
 import Footer from '../src/Components/utils/footer.jsx';
 import Header from '../src/Components/utils/header.jsx';
 import HomePage from "./Components/homePage.jsx";
-import Login from './Components/Login.jsx';
+import Login from './Components/login.jsx';
 import AddPeep from '../src/Components/utils/AddPeep.jsx'
 import House from './Components/utils/House.jsx';
 import Register from './Components/Register.jsx';
