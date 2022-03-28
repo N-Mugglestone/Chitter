@@ -5,9 +5,9 @@ const peepSchema = new mongoose.Schema({
     lastName: { type: String, required: true },
     userHandle: { type: String, required: true },
     timeStamp: { type: Date, required: true },
-    peepcontent: { type: String, required: true }
+    peepContent: { type: String, required: true }
 });
 
-const Peep = new mongoose.model("Peep", peepSchema)
+const Peep = mongoose.model("Peep", peepSchema)
 
 export default Peep;

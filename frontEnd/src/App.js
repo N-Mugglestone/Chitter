@@ -11,52 +11,53 @@ import Register from './Components/Register.jsx';
 
 
 
+// function App() {
+
+//   const [userLoggedIn, setUserLoggedIn] = useState(false);
+//   const [loggedInStatus, setLoggedInStatus] = useState(false);
+
+//   return (
+//     <>
+//       <Router>
+//         < Header user={loggedInStatus} setUserLoggedIn={setUserLoggedIn} setLoggedInStatus={setLoggedInStatus} userObject={userLoggedIn} />
+
+//         <Routes>
+
+//           <Route path='/' element={
+//             <>
+//               {loggedInStatus ? <HomePage component={<House currentUser={userLoggedIn} />} id={"House"} /> : <HomePage component={<Login setLoggedInStatus={setUserLoggedIn} loggedInStatus={loggedInStatus} />} />}
+//             </>
+//           } />
+
+//           <Route path="/register" element={<HomePage component={<Register />} />} />
+//           <Route path="/house" element={<HomePage component={<House />} />} />
+//           <Route path="/post/:_id" element={<HomePage component={<AddPeep user={userLoggedIn} />} />} />
+
+//         </Routes>
+//         <Footer />
+//       </Router>
+
+//     </>
+//   )
+// }
 function App() {
-
-  const [userLoggedIn, setUserLoggedIn] = useState(false);
-  const [loggedInStatus, setLoggedInStatus] = useState(false);
-
   return (
     <>
-      <Router>
-        < Header user={loggedInStatus} setUserLoggedIn={setUserLoggedIn} setLoggedInStatus={setLoggedInStatus} userObject={userLoggedIn} />
+      <head> CHITTER </head>
+      <Header />
+      <HomePage />
 
-        <Routes>
-
-          <Route path='/' element={
-            <>
-              {loggedInStatus ? <HomePage component={<House currentUser={userLoggedIn} />} id={"House"} /> : <HomePage component={<Login setLoggedInStatus={setUserLoggedIn} loggedInStatus={loggedInStatus} />} />}
-            </>
-          } />
-
-          <Route path="/register" element={<HomePage component={<Register />} />} />
-          <Route path="/house" element={<HomePage component={<House />} />} />
-          <Route path="/post/:_id" element={<HomePage component={<AddPeep user={userLoggedIn} />} />} />
-
-        </Routes>
-        <Footer />
-      </Router>
-
+      <Footer />
     </>
   )
-}
-
+};
 
 export default App;
 
 
 
 
-// function App() {
-//   return (
-//     <>
-//       <head> CHITTER </head>
-//       <Header />
-//       <HomePage />
-//       <Footer />
-//     </>
-//   )
-// };
+
 
 // function App() {
 

@@ -9,8 +9,7 @@
     "nodemon": "^2.0.15"
   },
   "scripts": {
-    "start": "NODE_ENV=development nodemon server",
-    "start-server": "node server.js && npm start"
+    "start": "SET NODE_ENV=development&& nodemon server"
   },
   "name": "backend-",
   "version": "1.0.0",

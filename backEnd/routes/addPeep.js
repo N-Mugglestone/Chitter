@@ -27,7 +27,7 @@ router.route(`/:_id`)
 
         })
 
-export { router as AddPeep };
+export { router as addPeep };
 
 
 // router.route('/')

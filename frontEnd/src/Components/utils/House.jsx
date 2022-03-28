@@ -11,7 +11,7 @@ const House = ({ currentUser }) => {
 
     const getPeeps = async () => {
         try {
-            const res = await axios.get('http://localhost:27017/Display');
+            const res = await axios.get('http://localhost:4000/Display');
             setAllPeeps(res.data);
         } catch (err) {
             setPeepsError('No peeps today')

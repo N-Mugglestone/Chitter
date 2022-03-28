@@ -1,6 +1,13 @@
+import PropTypes from 'prop-types'
 import '../CSS/header.css'
 
-const Header = () => {
+const Header = ({ user, setUserLoggedIn, setLoggedInStatus, userObject }) => {
+
+    const logOut = () => {
+        setUserLoggedIn({});
+        setLoggedInStatus(false);
+    }
+
     return (
         <>
             <nav>
@@ -11,8 +18,13 @@ const Header = () => {
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
                                 <a class="nav-link" href="/"> <bold>Home</bold> </a>
+
                                 <a class="nav-link" href='/register'> <bold>Register</bold> </a>
+
                                 <a class="nav-link" href='/login'> <bold>Login</bold> </a>
+
+                                <a class="nav-link" href='/' onClick={logOut}> <bold>LogOut</bold> </a>
+
                                 <a class="nav-link" href='/addPeep'> <bold>newPeep</bold> </a>
                             </div>
                         </div>
@@ -21,6 +33,15 @@ const Header = () => {
             </nav>
         </>
     )
+}
+
+Header.propTypes = {
+    user: PropTypes.bool,
+    setUserLoggedIn: PropTypes.func,
+    setUserLoggedInStatus: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.object
+    ])
 }
 
 export default Header;
