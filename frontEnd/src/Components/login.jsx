@@ -23,7 +23,7 @@ const Login = ({ setLoginUser }) => {
     const login = async (e) => {
         e.preventDefault();
 
-        const res = await axios.post('http://localhost:27017/login', user)
+        const res = await axios.post('http://localhost:4000/login', user)
         alert(res.data.message);
         setLoggedIn(res.data.user ? true : false);
         setUser({ email: '', password: '' });
