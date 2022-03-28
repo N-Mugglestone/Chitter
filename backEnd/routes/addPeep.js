@@ -3,17 +3,6 @@ import Peeps from '../Models/peep.Schema.js';
 
 const router = express.Router();
 
-router.route('/')
-    .get((req, res) => {
-        Peeps.find().sort('-date').find({}, function (err, result) {
-            if (err) {
-                console.log(err);
-            } else {
-                res.json(result);
-            }
-        })
-    })
-
 router.route(`/:_id`)
     .post([
         body(`firstName`).exists(),
@@ -32,5 +21,16 @@ router.route(`/:_id`)
                 })
                 .catch(err => res.status(400).send(`Adding peep failed`));
         });
+
+router.route('/')
+    .get((req, res) => {
+        Peeps.find().sort('-date').find({}, function (err, result) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.json(result);
+            }
+        })
+    })
 
 export { router as addPeep };

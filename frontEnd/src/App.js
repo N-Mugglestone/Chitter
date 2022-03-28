@@ -6,7 +6,7 @@ import Header from '../src/Components/utils/header.jsx';
 import HomePage from "./Components/homePage.jsx";
 import Login from './Components/Login.jsx'
 import TimeStamp from '../src/Components/TimeStamp.jsx'
-import CreatePeep from '../src/Components/utils/CreatePeep.jsx'
+import AddPeep from '../src/Components/utils/AddPeep.jsx'
 import House from './Components/utils/House.jsx'
 import Peeps from './Components/utils/Peeps'
 import Register from './Components/Register'
@@ -33,7 +33,7 @@ function App() {
 
           <Route path="/register" element={<HomePage component={<Register />} />} />
           <Route path="/house" element={<HomePage component={<House />} />} />
-          <Route path="/post/:_id" element={<HomePage component={<CreatePeep user={userLoggedIn} />} />} />
+          <Route path="/post/:_id" element={<HomePage component={<AddPeep user={userLoggedIn} />} />} />
 
         </Routes>
       </Router>

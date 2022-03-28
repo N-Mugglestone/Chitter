@@ -5,7 +5,7 @@ import axios from 'axios';
 import Model from './Model.jsx';
 
 
-const CreatePeep = ({ user }) => {
+const AddPeep = ({ user }) => {
 
     const { firstName, lastName, userHandle } = user;
 
@@ -50,7 +50,7 @@ const CreatePeep = ({ user }) => {
     )
 }
 
-CreatePeep.propTypes = {
+AddPeep.propTypes = {
     user: PropTypes.oneOfType([
         PropTypes.bool,
         PropTypes.shape({
@@ -61,7 +61,7 @@ CreatePeep.propTypes = {
     ])
 }
 
-export default CreatePeep;
+export default AddPeep;
 
 
 // const CreatePeep = ({ onSubmit }) => {
