@@ -1,0 +1,23 @@
+[
+    {
+        "firstName": "Daniel",
+        "secondName": "Scott",
+        "email": "Dan@email.com",
+        "userHandle": "@Magicman",
+        "password": "password"
+    },
+    {
+        "firstName": "Leanne",
+        "secondName": "Jenkins",
+        "email": "Jenny@email.com",
+        "userHandle": "@jenjen",
+        "password": "Password"
+    },
+    {
+        "firstName": "Kara",
+        "secondName": "Leek",
+        "email": "Kara@email.com",
+        "userHandle": "@leekyK",
+        "password": "password1!"
+    }
+]

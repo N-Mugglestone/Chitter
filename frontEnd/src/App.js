@@ -6,9 +6,7 @@ import HomePage from "./Components/homePage";
 import TimeStamp from '../src/Components/TimeStamp'
 import CreatePeep from '../src/Components/utils/CreatePeep'
 import mockData from '../src/mockData.json'
-// import { nanoid } from 'naniod';
 
-//const CURRENT_USER = 'Alex'
 
 // function App() {
 
@@ -47,16 +45,3 @@ function App() {
 
 
 export default App;
-
-
-
-// function App() {
-//   return (
-//     <>
-//       <head> CHITTER </head>
-//       <Header />
-//       <HomePage />
-//       <Footer />
-//     </>
-//   )
-// };

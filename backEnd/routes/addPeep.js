@@ -1,5 +1,5 @@
-import express, { Router } from 'express';
-import Peeps from '../Models/peep.model';
+import express from 'express';
+import Peeps from '../Models/peep.Schema.js';
 
 const router = express.Router();
 
@@ -17,7 +17,7 @@ router.route('/')
 router.route(`/`)
     .post((req, res) => {
         console.log(req.body.peep.name);
-        const peep = new Peep(req.body.peep);
+        const peep = new Peep(req.body);
         console.log(peep);
         peep.save()
             .then(peep => {
@@ -26,4 +26,4 @@ router.route(`/`)
             .catch(err => res.status(400).send(`Adding peep failed`));
     });
 
-module.exports = router;
+export { router as addPeep };

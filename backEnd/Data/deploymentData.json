@@ -1,0 +1,30 @@
+[
+    {
+        "firstName": "Daniel",
+        "secondName": "Scott",
+        "userHandle": "@Magicman",
+        "peepCreatedDate": "2022-03-04T21:00:00.000Z",
+        "peepBody": ""
+    },
+    {
+        "firstName": "Leanne",
+        "secondName": "Jenkins",
+        "userHandle": "@jenjen",
+        "peepCreatedDate": "2022-02-13T21:00:00.000Z",
+        "peepBody": ""
+    },
+    {
+        "firstName": "Kara",
+        "secondName": "Leek",
+        "userHandle": "@leekyK",
+        "peepCreatedDate": "2022-01-27T10:00:00.000Z",
+        "peepBody": ""
+    },
+    {
+        "firstName": "Leanne",
+        "secondName": "Jenkins",
+        "userHandle": "@jenjen",
+        "peepCreatedDate": "2022-01-02T08:00:00.000Z",
+        "peepBody": ""
+    }
+]

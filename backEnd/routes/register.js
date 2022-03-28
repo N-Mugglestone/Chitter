@@ -2,7 +2,7 @@ import express from 'express';
 
 const router = express.Router();
 
-import User from '../Models/user.Schema'
+import User from '../Models/user.Schema.js'
 
 router.route(`/`)
     .post((req, res) => {

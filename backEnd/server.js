@@ -2,14 +2,29 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import { application } from 'express';
-// import { router as userPageRouter } from './routes/userPage.js' ---------put proper route in 
 import cors from 'cors';
+
+// import HomePage from '../frontEnd/src/Components/homePage';
+import { login } from './routes/login.js';
+import { register } from './routes/register.js';
+import { addPeep } from './routes/addPeep.js'
 
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
-const port = process.env.PORT;
 const app = express();
-// app.use(express.urlencoded({ extended: true }));
+
+const port = process.env.PORT;
+const host = process.env.HOST;
+
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(cors());
+
+app.use('/', HomePage)
+app.use('/login', login)
+app.use('/register', register)
+app.use('/addPeep', addPeep)
+// app.use('/', userPageRouter);m    -----input actul route 
 
 const main = async () => {
     console.log(`Connecting to DB: ${process.env.DB_URI}`);
@@ -17,10 +32,6 @@ const main = async () => {
 }
 
 main().catch(err => console.log(err))
-
-
-app.use(cors());
-// app.use('/', userPageRouter);m    -----input actul route 
 
 
 const server = app.listen(port, () => {
