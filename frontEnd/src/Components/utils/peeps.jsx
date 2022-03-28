@@ -1,18 +1,20 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react'
+import { useState } from 'react';
 
-function Peeps(props) {
-    const { user, timeStamp, message } = props
+
+function Peeps({ peepContent }) {
+    // const { user, timeStamp, message } = props
+    const { firstName, lastName, userHandle, timeStamp, peepBody } = peepContent
+    const formattedDate = new Date(timeStamp).toDateString()
 
     return (
         <>
             <div class="card">
                 <div class="container">
-                    <h4> Placeholder user </h4>
-                    <h5> PLaceolder Time Stamp</h5>
-                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                        Quaerat porro necessitatibus dolor veniam ipsum placeat quo
-                        dolores dolore. Modi, dicta. </p>
+                    <h4 className='PeepName'>(firstName) &nspw; (lastName)</h4>
+                    <h2>(userHandle)</h2>
+                    <h5> (formattedDate)</h5>
+                    <p> (peepBody) </p>
 
                 </div>
             </div>
@@ -21,12 +23,27 @@ function Peeps(props) {
 }
 
 
-
-
 Peeps.propTypes = {
-    user: PropTypes.string,
-    timeStamp: PropTypes.string
+    peepContent: PropTypes.shape({
+        _id: PropTypes.string,
+        firstName: PropTypes.string,
+        secondName: PropTypes.string,
+        userHandle: PropTypes.string,
+        timeStamp: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.instanceOf(Date),
+        ]),
+        peepBody: PropTypes.string
+    })
 }
+
+
+
+
+// Peeps.propTypes = {
+//     user: PropTypes.string,
+//     timeStamp: PropTypes.string
+// }
 
 export default Peeps;
 
@@ -45,3 +62,18 @@ export default Peeps;
 // }
 
 // export default newPeeps;
+
+// return (
+//     <>
+//         <div class="card">
+//             <div class="container">
+//                 <h4> Placeholder user </h4>
+//                 <h5> PLaceolder Time Stamp</h5>
+//                 <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+//                     Quaerat porro necessitatibus dolor veniam ipsum placeat quo
+//                     dolores dolore. Modi, dicta. </p>
+
+//             </div>
+//         </div>
+//     </>
+// )

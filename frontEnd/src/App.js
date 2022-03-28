@@ -1,28 +1,50 @@
-// import { Routes, Route, Link } from "react-router-dom"
-import { useState } from "react"
+import { BrowserRouter as Router, Routes, Route, Protec } from "react-router-dom"
+import { useState } from "react";
 
-import Footer from '../src/Components/utils/footer'
-import Header from '../src/Components/utils/header'
-import HomePage from "./Components/homePage";
+import Footer from '../src/Components/utils/footer.jsx';
+import Header from '../src/Components/utils/header.jsx';
+import HomePage from "./Components/homePage.jsx";
+import Login from './Components/Login.jsx'
+import TimeStamp from '../src/Components/TimeStamp.jsx'
+import AddPeep from '../src/Components/utils/AddPeep.jsx'
+import House from './Components/utils/House.jsx'
+import Peeps from './Components/utils/Peeps'
+import Register from './Components/Register'
+import mockData from '../src/mockData.json'
+
 
 function App() {
 
-
-
-
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [loggedInStatus, setLoggedInStatus] = useState(false);
 
   return (
     <>
-      <head> CHITTER </head>
-      <Header />
-      <HomePage />
+      <Router>
+        < Header user={loggedInStatus} setUserLoggedIn={setUserLoggedIn} setLoggedInStatus={setLoggedInStatus} userObject={userLoggedIn} />
+
+        <Routes>
+
+          <Route path='/' element={
+            <>
+              {loggedInStatus ? <HomePage component={<House currentUser={userLoggedIn} />} id={"House"} /> : <HomePage component={<Login setLoggedInStatus={setUserLoggedIn} loggedInStatus={loggedInStatus} />} />}
+            </>
+          } />
+
+          <Route path="/register" element={<HomePage component={<Register />} />} />
+          <Route path="/house" element={<HomePage component={<House />} />} />
+          <Route path="/post/:_id" element={<HomePage component={<AddPeep user={userLoggedIn} />} />} />
+
+        </Routes>
+      </Router>
       <Footer />
     </>
   )
-};
+}
 
 
 export default App;
+
 
 
 
@@ -35,4 +57,27 @@ export default App;
 //       <Footer />
 //     </>
 //   )
+// };
+
+// function App() {
+
+//   const [peeps, setPeeps] = useState(mockData);
+
+//   const handlePostPeeps = (content) => {
+//     const newPeeps = {
+//       content,
+//       id: nanoid(),
+//       created_on: Date(Date.now()),
+//       user: CURRENT_USER,
+//     };
+//     setPeeps([...peeps, newPeeps])
+//   }
+
+//   return (
+//     <div className="app">
+//       <ComposeForm onSubmit={handlePostPeep} />
+//       <div className="separator"></div>
+//       <TimeStamp peeps={peeps} />
+//     </div>
+//   );
 // };

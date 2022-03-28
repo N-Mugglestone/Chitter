@@ -10,10 +10,10 @@ const Header = () => {
                         </a>
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
-                                <a class="nav-link" href="#"> <bold>Home</bold> </a>
-                                <a class="nav-link" href='#'> <bold>Register</bold> </a>
-                                <a class="nav-link" href='#'> <bold>Login</bold> </a>
-                                <a class="nav-link" href='#'> <bold>Logout</bold> </a>
+                                <a class="nav-link" href="/"> <bold>Home</bold> </a>
+                                <a class="nav-link" href='/register'> <bold>Register</bold> </a>
+                                <a class="nav-link" href='/login'> <bold>Login</bold> </a>
+                                <a class="nav-link" href='/addPeep'> <bold>newPeep</bold> </a>
                             </div>
                         </div>
                     </div>
