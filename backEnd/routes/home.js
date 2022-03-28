@@ -5,9 +5,9 @@ const router = express.Router();
 
 router.route('/')
     .get((req, res) => {
-        Peep.find().sort('.peepCreatedDate').find((error, peeps) => {
+        Peep.find().sort('.date').find((error, peeps) => {
             error ? res.status(404).send({ message: 'Peeps not found' }) : res.status(200).send(peeps);
         })
     })
 
-export { router as homePage }
+export { router as home }

@@ -4,6 +4,8 @@ import peepPhoto1 from '../images/peepPhoto1.jpg'
 import peepPhoto2 from '../images/peepPhoto2.jpg'
 import peepPhoto3 from '../images/peepPhoto3.jpg'
 
+import Wall from './utils/Wall.jsx'
+
 
 const HomePage = () => {
     return (
@@ -16,8 +18,7 @@ const HomePage = () => {
                     <img src={peepPhoto3} alt='The dog' />
                 </div>
                 <div class="column">
-                    <Peeps />
-                    <Peeps />
+                    <Wall />
                 </div>
 
                 <div class="column">

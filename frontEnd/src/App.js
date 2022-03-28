@@ -1,12 +1,62 @@
-// import { Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Protec } from "react-router-dom"
 import { useState } from "react";
-import Footer from '../src/Components/utils/footer';
-import Header from '../src/Components/utils/header';
-import HomePage from "./Components/homePage";
-import TimeStamp from '../src/Components/TimeStamp'
-import CreatePeep from '../src/Components/utils/CreatePeep'
+
+import Footer from '../src/Components/utils/footer.jsx';
+import Header from '../src/Components/utils/header.jsx';
+import HomePage from "./Components/homePage.jsx";
+import Login from './Components/Login.jsx'
+import TimeStamp from '../src/Components/TimeStamp.jsx'
+import CreatePeep from '../src/Components/utils/CreatePeep.jsx'
+import House from './Components/utils/House.jsx'
+import Peeps from './Components/utils/Peeps'
+import Register from './Components/Register'
 import mockData from '../src/mockData.json'
 
+
+function App() {
+
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [loggedInStatus, setLoggedInStatus] = useState(false);
+
+  return (
+    <>
+      <Router>
+        < Header user={loggedInStatus} setUserLoggedIn={setUserLoggedIn} setLoggedInStatus={setLoggedInStatus} userObject={userLoggedIn} />
+
+        <Routes>
+
+          <Route path='/' element={
+            <>
+              {loggedInStatus ? <HomePage component={<House currentUser={userLoggedIn} />} id={"House"} /> : <HomePage component={<Login setLoggedInStatus={setUserLoggedIn} loggedInStatus={loggedInStatus} />} />}
+            </>
+          } />
+
+          <Route path="/register" element={<HomePage component={<Register />} />} />
+          <Route path="/house" element={<HomePage component={<House />} />} />
+          <Route path="/post/:_id" element={<HomePage component={<CreatePeep user={userLoggedIn} />} />} />
+
+        </Routes>
+      </Router>
+    </>
+  )
+}
+
+
+export default App;
+
+
+
+
+// function App() {
+//   return (
+//     <>
+//       <head> CHITTER </head>
+//       <Header />
+//       <HomePage />
+//       <Footer />
+//     </>
+//   )
+// };
 
 // function App() {
 
@@ -30,18 +80,3 @@ import mockData from '../src/mockData.json'
 //     </div>
 //   );
 // };
-
-
-function App() {
-  return (
-    <>
-      <head> CHITTER </head>
-      <Header />
-      <HomePage />
-      <Footer />
-    </>
-  )
-};
-
-
-export default App;

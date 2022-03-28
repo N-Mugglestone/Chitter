@@ -1,5 +1,5 @@
-import { useeffect, useState } from 'react';
-import propTypes from 'prop-types';
+import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 
 import Wall from './Wall';
@@ -9,9 +9,9 @@ const House = ({ currentUser }) => {
     const [peepsError, setPeepsError] = useState('');
     const [allPeeps, setAllPeeps] = useState({});
 
-    const getPeeps = async => {
+    const getPeeps = async () => {
         try {
-            const res = await.axios.get('http://localhost:27017/Display');
+            const res = await axios.get('http://localhost:27017/Display');
             setAllPeeps(res.data);
         } catch (err) {
             setPeepsError('No peeps today')

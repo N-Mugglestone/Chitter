@@ -14,7 +14,7 @@ router.route('/')
         })
     })
 
-router.route(`/`)
+router.route(`/:_id`)
     .post([
         body(`firstName`).exists(),
         body(`date`).exists().isDate(),
