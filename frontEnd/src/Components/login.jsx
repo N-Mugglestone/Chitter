@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { Link, Navigate, useLocation } from 'react-router-dom'
+import './CSS/login.css'
 
 const Login = ({ setLoginUser }) => {
     const [user, setUser] = useState({
@@ -33,16 +34,20 @@ const Login = ({ setLoginUser }) => {
     return (
         <>
             {loggedIn && <Navigate to='/' state={{ from: location }} />}
-            <h3> Log into your account</h3>
+            <h1> Log into your account</h1>
             <form onSubmit={login}>
+                <label className="formLabel" htmlFor='Email'>Email</label>
+                <br />
                 <input type='email' id='sign-in-email' name='email' value={user.email} onChange={handleChange} placeholder='your email' />
+                <br />
+                <label className="formLabel" htmlFor='password'>Password</label>
                 <br />
                 <input type='password' id='sign-in-password' name='password' value={user.password} onChange={handleChange} placeholder='your password' />
                 <br />
                 <input type='submit' value='Login' />
             </form>
             <Link to='/register'>
-                No account? Sign up now!
+                <p>No account? Sign up now!</p>
             </Link>
         </>
     )

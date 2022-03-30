@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { useParams } from 'react-router'
 import axios from 'axios';
 
+import '../CSS/addPeeps.css'
+
 import Model from './Model.jsx';
 
 
@@ -35,18 +37,19 @@ const AddPeep = ({ user }) => {
 
     }
 
-
+    // form action="/Wall"
     return (
         <>
             <div id="postComponent">
                 <div>
-                    <h1> Peeps </h1>
-                    <h2 className="peepName">{firstName} &nspw; {lastName}</h2>
+                    <h1> Make a new Peep </h1>
+                    <h2 className="peepName">{firstName} {lastName}</h2>
                     <h3 className="peepHandle">{userHandle}</h3>
                     <form onSubmit={makeNewPeep}>
                         <textarea type="text" placeholder="Write here..." value={newAddPeep}></textarea>
                         {addPeepMessage && <small>{addPeepMessage}</small>}
-                        <input id="addPeepButton" type="submit" value="addPeep"></input>
+                        <br />
+                        <input id="newPeepButton" type="submit" value="Peep"></input>
                     </form>
                 </div>
             </div>
