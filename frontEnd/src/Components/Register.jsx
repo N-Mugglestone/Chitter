@@ -42,7 +42,6 @@ const Register = () => {
     return (
         <>
             <h3> Create Account</h3>
-            <p> Already have a account?  &nbpw; <Link to="/login"> Sign in </Link></p>
             <form onSubmit={register}>
                 <label className="formLabel" htmlFor='firstName'>First name</label>
                 <br />
@@ -66,6 +65,7 @@ const Register = () => {
                 <br />
                 <imput id="registerButton" type="submit" value="Register" />
             </form>
+            <p> Already have a account? <Link to="/login"><br /> Sign in </Link></p>
         </>
     )
 }
