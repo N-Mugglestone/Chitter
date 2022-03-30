@@ -1,31 +1,35 @@
 import { useState } from "react"
 import PropTypes from "prop-types";
+import { useParams } from 'react-router'
 import axios from 'axios';
 
 import Model from './Model.jsx';
+
 
 
 const AddPeep = ({ user }) => {
 
     const { firstName, lastName, userHandle } = user;
 
-    const { newPost, setNewPost } = useState('');
-    const { postMessage, setPostMessage } = useState('');
+    const { newAddPeep, setNewAddPeep } = useState('');
+    const { addPeepMessage, setAddPeepMessage } = useState('');
 
-    const makeNewPost = async (e) => {
+    const { _id } = useParams;
+
+    const makeNewPeep = async (e) => {
         e.preventDefault();
 
         const date = new Date().toISOString().toString();
 
-        const newPeep = new Model(firstName, lastName, userHandle, date, newPost)
+        const newPeep = new Model(firstName, lastName, userHandle, date, newAddPeep)
 
-        if (newPost.length > 0) {
+        if (newPeep.length > 0) {
             try {
-                const res = await axios.post('http://localhost:27017/post/:_id', newPeep)
-                setPostMessage(res.data.message);
-                setNewPost('');
+                const res = await axios.post('http://localhost:4000/addPeep:_id', newPeep)
+                setAddPeepMessage(res.data.message);
+                setNewAddPeep('');
             } catch (err) {
-                setPostMessage('There are issues, try again')
+                setAddPeepMessage('There are issues, try again')
             }
         }
 
@@ -36,13 +40,13 @@ const AddPeep = ({ user }) => {
         <>
             <div id="postComponent">
                 <div>
+                    <h1> Peeps </h1>
                     <h2 className="peepName">{firstName} &nspw; {lastName}</h2>
                     <h3 className="peepHandle">{userHandle}</h3>
-                    <form onSubmit={makeNewPost}>
-                        <textarea type="text" placeholder="Write here..." value={newPost}></textarea>
-                        {postMessage && <small>{postMessage}</small>}
-                        <div id="postWarning"></div>
-                        <input id="newPostButton" type="submit" value="post"></input>
+                    <form onSubmit={makeNewPeep}>
+                        <textarea type="text" placeholder="Write here..." value={newAddPeep}></textarea>
+                        {addPeepMessage && <small>{addPeepMessage}</small>}
+                        <input id="addPeepButton" type="submit" value="addPeep"></input>
                     </form>
                 </div>
             </div>

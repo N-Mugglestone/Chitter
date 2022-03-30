@@ -3,29 +3,40 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Register = () => {
-    const [user, setUser] = useState({
-        name: '',
+    const [newUser, setNewUser] = useState({
+        firstName: '',
+        lastName: '',
         email: '',
+        userHandle: '',
         password: ''
     });
 
-    const handleChange = e => {
-        const { name, value } = e.target;
-        setUser({
-            ...user,
-            [name]: value
-        });
-    }
-
     const register = async (e) => {
         e.preventDefault()
-        const { name, email, password } = user;
-        if (name && email && password) {
-            const res = await axios.post('http://localhost:3000/register', user);
-            alert(res.data.message);
-            return;
+        const { firstName, lastName, email, userHandle, password } = newUser;
+        if (firstName && lastName && email && userHandle && password) {
+            try {
+                const res = await axios.post('http://localhost:3000/register', newUser)
+                setNewUser({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    userHandle: '',
+                    password: '',
+                })
+                return;
+            } catch (err) {
+
+            }
         }
-        alert('Invalid input')
+    }
+
+    const handleChange = e => {
+        const { name, value } = e.target;
+        setNewUser({
+            ...newUser,
+            [name]: value
+        });
     }
 
     return (
@@ -33,15 +44,27 @@ const Register = () => {
             <h3> Create Account</h3>
             <p> Already have a account?  &nbpw; <Link to="/login"> Sign in </Link></p>
             <form onSubmit={register}>
-                <input type="text" id="create-account-pseudo" name="name" value={user.name} onChange={handleChange} placeholder="FullName" />
+                <label className="formLabel" htmlFor='firstName'>First name</label>
                 <br />
-                <input type="email" id="create-account-first-name" name="email" value={user.email} onChange={handleChange} placeholder="Email" />
+                <input type="text" id="user-first-name" name="firstName" value={newUser.firstName} onChange={handleChange} placeholder="FullName" />
                 <br />
-                <input type="password" id="create-account-email" name="password" value={user.password} onChange={handleChange} placeholder="Password" />
+                <label className="formLabel" htmlFor='lastName'>Last name</label>
                 <br />
-                <button type="submit">
-                    register
-                </button>
+                <input type="email" id="user-last-name" name="lastName" value={newUser.lastName} onChange={handleChange} placeholder="Email" />
+                <br />
+                <label className="formLabel" htmlFor='email'>Email</label>
+                <br />
+                <input type="password" id="new-user-email" name="email" value={newUser.email} onChange={handleChange} placeholder="Password" />
+                <br />
+                <label className="formLabel" htmlFor='userHandle'>User handle</label>
+                <br />
+                <input type="password" id="new-user-handle" name="userhandle" value={newUser.userHandle} onChange={handleChange} placeholder="Password" />
+                <br />
+                <label className="formLabel" htmlFor='password'>Password</label>
+                <br />
+                <input type="password" id="new-user-password" name="password" value={newUser.password} onChange={handleChange} placeholder="Password" />
+                <br />
+                <imput id="registerButton" type="submit" value="Register" />
             </form>
         </>
     )

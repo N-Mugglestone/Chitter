@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Peeps from "./Peeps";
+import Peeps from "./peeps";
 import peepsArrayExternal from './deploymentData.json'
 import { useEffect, useState } from 'react';
 import axios from 'axios';

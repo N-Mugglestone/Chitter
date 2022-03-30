@@ -15,7 +15,7 @@ router.route(`/:_id`)
 
         (req, res) => {
 
-            const newPeep = new Peep(req.body);
+            const newPeep = new Peeps(req.body);
 
             newPeep.save(err => {
                 if (err) {
