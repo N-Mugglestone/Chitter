@@ -12,9 +12,9 @@ router.route('/')
             if (user && password === user.password) {
                 res.send({ message: 'Login is a success', user })
             }
-            else if (user && password !== user.password) {
-                res.send({ message: 'Are you sure that is right?' })
-            }
+            // else if (user && password !== user.password) {
+            //     res.send({ message: 'Are you sure that is right?' })
+            // }
             else {
                 res.send({ message: 'No account? Why not register?' })
             }

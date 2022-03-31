@@ -12,21 +12,21 @@ const Header = ({ setUserLoggedIn, setLoggedInStatus, userObject }) => {
     return (
         <>
             <nav>
-                <nav class="navbar navbar-expand-lg navbar-dark">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href='#'>
+                <nav className="navbar navbar-expand-lg navbar-dark">
+                    <div className="container-fluid">
+                        <a className="navbar-brand" href='#'>
                         </a>
-                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                            <div class="navbar-nav">
-                                <a class="nav-link" href="/"> <bold>Home</bold> </a>
+                        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div className="navbar-nav">
+                                <a className="nav-link" href="/"> <em>Home</em> </a>
 
-                                <a class="nav-link" href='/register'> <bold>Register</bold> </a>
+                                <a className="nav-link" href='/register'> <em>Register</em> </a>
 
-                                <a class="nav-link" href='/login'> <bold>Login</bold> </a>
+                                <a className="nav-link" href='/login'> <em>Login</em> </a>
 
-                                <a class="nav-link" href='/' onClick={logOut}> <bold>LogOut</bold> </a>
+                                <a className="nav-link" href='/' onClick={logOut}> <em>LogOut</em> </a>
 
-                                <a class="nav-link" href='/addPeep'> <bold>addPeep</bold> </a>
+                                <a className="nav-link" href='/addPeep'> <em>addPeep</em> </a>
                             </div>
                         </div>
                     </div>

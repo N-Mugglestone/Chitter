@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import './CSS/register.css'
 
@@ -11,6 +11,7 @@ const Register = () => {
         userHandle: '',
         password: ''
     });
+    const [submitted, setSubmitted] = useState(false);
 
     const register = async (e) => {
         e.preventDefault()
@@ -25,9 +26,14 @@ const Register = () => {
                     userHandle: '',
                     password: '',
                 })
-                return;
-            } catch (err) {
+                if (res.data.message === "success") {
+                    setSubmitted(true)
+                    return
+                }
+                setSubmitted(res.data.message)
 
+            } catch (err) {
+                console.log(err)
             }
         }
     }
@@ -40,8 +46,18 @@ const Register = () => {
         });
     }
 
+    if (submitted === "user exists") {
+        return (
+            <>
+                <h2>{submitted}</h2>
+                <p> You already have a account! <Link to="/login"><br /> Sign in </Link></p>
+            </>
+        )
+    }
+
     return (
         <>
+            {submitted && <Navigate to="/login" />}
             <h1> Create Account</h1>
             <form onSubmit={register}>
                 <label className="formLabel" htmlFor='firstName'>First name</label>
@@ -72,4 +88,4 @@ const Register = () => {
     )
 }
 
-export default Register;
+export default Register; 

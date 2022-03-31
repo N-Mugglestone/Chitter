@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import { application } from 'express';
+import morgan from 'morgan'
 import cors from 'cors';
 
 import { home } from './routes/home.js';
@@ -16,6 +17,7 @@ const app = express();
 const port = process.env.PORT;
 const host = process.env.HOST;
 
+app.use(morgan('tiny'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
