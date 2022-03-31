@@ -49,6 +49,7 @@ const Login = ({ setLoginUser }) => {
             <Link to='/register'>
                 <p>No account? Sign up now!</p>
             </Link>
+
         </>
     )
 }

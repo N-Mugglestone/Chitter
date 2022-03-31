@@ -4,9 +4,7 @@ import { useParams } from 'react-router'
 import axios from 'axios';
 
 import '../CSS/addPeeps.css'
-
 import Model from './Model.jsx';
-
 
 
 const AddPeep = ({ user }) => {
@@ -16,7 +14,7 @@ const AddPeep = ({ user }) => {
     const { newAddPeep, setNewAddPeep } = useState('');
     const { addPeepMessage, setAddPeepMessage } = useState('');
 
-    const { _id } = useParams;
+    const { _id } = useParams();
 
     const makeNewPeep = async (e) => {
         e.preventDefault();
@@ -37,7 +35,7 @@ const AddPeep = ({ user }) => {
 
     }
 
-    // form action="/Wall"
+    // form action="/Wall" ---------push to json file? push to the wall array? 
     return (
         <>
             <div id="postComponent">
