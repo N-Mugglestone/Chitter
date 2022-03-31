@@ -28,7 +28,7 @@ const Login = ({ setLoginUser }) => {
         alert(res.data.message);
         setLoggedIn(res.data.user ? true : false);
         setUser({ email: '', password: '' });
-        setLoginUser(res.data.user)
+        setLoginUser(res.data.user);
     }
 
     return (
