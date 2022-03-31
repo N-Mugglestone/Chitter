@@ -27,7 +27,7 @@ const AddPeep = ({ user }) => {
 
         if (newPeep.length > 0) {
             try {
-                const res = await axios.post('http://localhost:4000/addPeep:_id', newPeep)
+                const res = await axios.post('http://localhost:4000/addPeep/:_id', newPeep)
                 setAddPeepMessage(res.data.message);
                 setNewAddPeep('');
             } catch (err) {

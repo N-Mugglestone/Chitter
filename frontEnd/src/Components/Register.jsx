@@ -46,19 +46,19 @@ const Register = () => {
             <form onSubmit={register}>
                 <label className="formLabel" htmlFor='firstName'>First name</label>
                 <br />
-                <input type="lastName" id="user-first-name" name="firstName" value={newUser.firstName} onChange={handleChange} placeholder="FirstName" />
+                <input type="text" id="user-first-name" name="firstName" value={newUser.firstName} onChange={handleChange} placeholder="FirstName" />
                 <br />
                 <label className="formLabel" htmlFor='lastName'>Last name</label>
                 <br />
-                <input type="lastName" id="user-last-name" name="lastName" value={newUser.lastName} onChange={handleChange} placeholder="LastName" />
+                <input type="text" id="user-last-name" name="lastName" value={newUser.lastName} onChange={handleChange} placeholder="LastName" />
                 <br />
                 <label className="formLabel" htmlFor='email'>Email</label>
                 <br />
-                <input type="password" id="new-user-email" name="email" value={newUser.email} onChange={handleChange} placeholder="Email" />
+                <input type="email" id="new-user-email" name="email" value={newUser.email} onChange={handleChange} placeholder="Email" />
                 <br />
-                <label className="formLabel" htmlFor='userHandle'>User handle</label>
+                <label className="formLabel" htmlFor="userHandle">User handle</label>
                 <br />
-                <input type="userHandle" id="new-user-handle" name="userhandle" value={newUser.userHandle} onChange={handleChange} placeholder="UserHandle" />
+                <input type="text" id="user-handle-name" name="userHandle" value={newUser.userHandle} onChange={handleChange} placeholder="UserHandle" />
                 <br />
                 <label className="formLabel" htmlFor='password'>Password</label>
                 <br />
