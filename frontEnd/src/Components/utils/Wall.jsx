@@ -8,7 +8,6 @@ import axios from 'axios';
 const Wall = () => {
     const [peepsArray, setPeepsArray] = useState([]);
 
-
     useEffect(() => {
         const getPeeps = async () => {
             const response = await axios.get(`http://localhost:3000/`);

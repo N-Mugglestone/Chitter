@@ -28,7 +28,7 @@ router.route(`/`)
                 }
                 else {
                     const newUser = new User(req.body);
-                    user.save(err => {
+                    newUser.save(err => {
                         if (err) {
                             res.send({ message: err });
                         }
