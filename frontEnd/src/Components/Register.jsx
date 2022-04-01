@@ -1,50 +1,91 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
+import './CSS/register.css'
 
 const Register = () => {
-    const [user, setUser] = useState({
-        name: '',
+    const [newUser, setNewUser] = useState({
+        firstName: '',
+        lastName: '',
         email: '',
+        userHandle: '',
         password: ''
     });
+    const [submitted, setSubmitted] = useState(false);
+
+    const register = async (e) => {
+        e.preventDefault()
+        const { firstName, lastName, email, userHandle, password } = newUser;
+        if (firstName && lastName && email && userHandle && password) {
+            try {
+                const res = await axios.post('http://localhost:3000/register', newUser)
+                setNewUser({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    userHandle: '',
+                    password: '',
+                })
+                if (res.data.message === "success") {
+                    setSubmitted(true)
+                    return
+                }
+                setSubmitted(res.data.message)
+
+            } catch (err) {
+                console.log(err)
+            }
+        }
+    }
 
     const handleChange = e => {
         const { name, value } = e.target;
-        setUser({
-            ...user,
+        setNewUser({
+            ...newUser,
             [name]: value
         });
     }
 
-    const register = async (e) => {
-        e.preventDefault()
-        const { name, email, password } = user;
-        if (name && email && password) {
-            const res = await axios.post('http://localhost:3000/register', user);
-            alert(res.data.message);
-            return;
-        }
-        alert('Invalid input')
+    if (submitted === "user exists") {
+        return (
+            <>
+                <h2>{submitted}</h2>
+                <p> You already have a account! <Link to="/login"><br /> Sign in </Link></p>
+            </>
+        )
     }
 
     return (
         <>
-            <h3> Create Account</h3>
-            <p> Already have a account?  &nbpw; <Link to="/login"> Sign in </Link></p>
+            {submitted && <Navigate to="/login" />}
+            <h1> Create Account</h1>
             <form onSubmit={register}>
-                <input type="text" id="create-account-pseudo" name="name" value={user.name} onChange={handleChange} placeholder="FullName" />
+                <label className="formLabel" htmlFor='firstName'>First name</label>
                 <br />
-                <input type="email" id="create-account-first-name" name="email" value={user.email} onChange={handleChange} placeholder="Email" />
+                <input type="text" id="user-first-name" name="firstName" value={newUser.firstName} onChange={handleChange} placeholder="FirstName" />
                 <br />
-                <input type="password" id="create-account-email" name="password" value={user.password} onChange={handleChange} placeholder="Password" />
+                <label className="formLabel" htmlFor='lastName'>Last name</label>
                 <br />
-                <button type="submit">
-                    register
-                </button>
+                <input type="text" id="user-last-name" name="lastName" value={newUser.lastName} onChange={handleChange} placeholder="LastName" />
+                <br />
+                <label className="formLabel" htmlFor='email'>Email</label>
+                <br />
+                <input type="email" id="new-user-email" name="email" value={newUser.email} onChange={handleChange} placeholder="Email" />
+                <br />
+                <label className="formLabel" htmlFor="userHandle">User handle</label>
+                <br />
+                <input type="text" id="user-handle-name" name="userHandle" value={newUser.userHandle} onChange={handleChange} placeholder="UserHandle" />
+
+                <br />
+                <label className="formLabel" htmlFor='password'>Password</label>
+                <br />
+                <input type="password" id="new-user-password" name="password" value={newUser.password} onChange={handleChange} placeholder="Password" />
+                <br />
+                <input id="registerButton" type="submit" value="Register" />
             </form>
+            <p> Already have a account? <Link to="/login"><br /> Sign in </Link></p>
         </>
     )
 }
 
-export default Register;
+export default Register; 

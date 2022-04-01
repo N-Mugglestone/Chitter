@@ -21,6 +21,10 @@ const HomePage = () => {
                     <Wall />
                 </div>
 
+                <div class="column">
+
+
+                </div>
             </div>
 
         </body >

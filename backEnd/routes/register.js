@@ -1,8 +1,8 @@
 import express from 'express';
+import { body, validationResult } from 'express-validator';
+import User from '../Models/userSchema.js'
 
 const router = express.Router();
-
-import User from '../Models/userSchema.js'
 
 router.route(`/`)
     .post([
@@ -17,14 +17,20 @@ router.route(`/`)
             const { email } = req.body;
 
             User.findOne({ email }, (err, user) => {
+
+                const errors = validationResult(req);
+                if (!errors.isEmpty()) {
+                    return res.status(400).json({ errors: errors.array() })
+                }
+
                 if (user) {
                     res.send({ message: `user exists` });
                 }
                 else {
-                    const user = new User(req.body);
-                    user.save(err => {
+                    const newUser = new User(req.body);
+                    newUser.save(err => {
                         if (err) {
-                            res.send(err);
+                            res.send({ message: err });
                         }
                         else {
                             res.send({ message: `success` });

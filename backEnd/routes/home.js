@@ -5,11 +5,10 @@ const router = express.Router();
 
 router.route('/')
     .get((req, res) => {
-        //Peep.find().sort('-date')
-        Peep.find((error, peeps) => {
-            console.log(peeps);
-            error ? res.status(404).send({ message: 'Peeps are not here' }) : res.json(peeps);
-        })
-    })
+        Peep.find().sort('-peepCreatedDate').find((error, peeps) => {
+
+            error ? res.status(404).send({ message: 'Peeps are not here' }) : res.status(200).send(peeps);
+        });
+    });
 
 export { router as home }
