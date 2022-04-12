@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Protec } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import { useState } from "react";
 
 import Footer from '../src/Components/utils/footer.jsx';
@@ -13,25 +13,25 @@ import Wall from "./Components/utils/Wall.jsx";
 
 function App() {
 
-  const [userLoggedIn, setUserLoggedIn] = useState(false);
-  const [loggedInStatus, setLoggedInStatus] = useState(false);
+  const [loginUser, setLoginUser] = useState()
 
   return (
     <>
       <Router>
-        < Header user={loggedInStatus} setUserLoggedIn={setUserLoggedIn} setLoggedInStatus={setLoggedInStatus} userObject={userLoggedIn} />
+        < Header user={{ loginUser, setLoginUser }} />
 
         <Routes>
 
-          <Route path="/" element={
-            <>
-              {loggedInStatus ? <HomePage component={<Wall currentUser={userLoggedIn} />} id={"Wall"} /> : <HomePage component={<Login setLoggedInStatus={setUserLoggedIn} loggedInStatus={loggedInStatus} />} />}
-            </>
-          } />
-
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<HomePage loginUser={loginUser} />} />
+          {/*
+          //   <>
+          //     {loginUser ? <HomePage component={<Wall currentUser={loginUser} />} id={"Wall"} /> : < Navigate to="/login" />}
+          //   </>
+          // } />
+  */}
+          <Route path="/login" element={<Login setLoginUser={setLoginUser} />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/addPeep/:_id" element={<AddPeep user={userLoggedIn} />} />
+          <Route path="/addPeep/:_id" element={<AddPeep user={loginUser} />} />
 
         </Routes>
         <Footer />

@@ -29,11 +29,14 @@ const Login = ({ setLoginUser }) => {
         setLoggedIn(res.data.user ? true : false);
         setUser({ email: '', password: '' });
         setLoginUser(res.data.user);
+        return (
+            <Navigate to={res.data.user ? `/` : `/login`} />
+        )
     }
 
     return (
         <>
-            {loggedIn && <Navigate to='/' state={{ from: location }} />}
+            {/* {loggedIn && <Navigate to='/' state={{ from: location }} />} */}
             <h1> Log into your account</h1>
             <form onSubmit={login}>
                 <label className="formLabel" htmlFor='Email'>Email</label>
