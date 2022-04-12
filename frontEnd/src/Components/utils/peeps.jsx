@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react';
+// import { useState } from 'react';
 
 
 function Peeps({ peepBody }) {
@@ -9,8 +9,8 @@ function Peeps({ peepBody }) {
 
     return (
         <>
-            <div class="card">
-                <div class="container">
+            <div className="card">
+                <div className="container">
                     <h4 className='PeepName'>{firstName}</h4>
                     <h2>{userHandle}</h2>
                     <h5> {formattedDate}</h5>

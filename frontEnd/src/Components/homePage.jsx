@@ -1,5 +1,5 @@
 import '../Components/CSS/homepage.css'
-import Peeps from './utils/peeps.jsx'
+// import Peeps from './utils/peeps.jsx'
 import { Navigate } from 'react-router-dom'
 import peepPhoto1 from '../images/peepPhoto1.jpg'
 import peepPhoto2 from '../images/peepPhoto2.jpg'
