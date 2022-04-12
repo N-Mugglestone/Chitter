@@ -6,10 +6,10 @@ const router = express.Router();
 
 router.route('/')
     .post((req, res) => {
-        const { email, password } = req.body;
+        let { email, password } = req.body;
         console.log(email)
         User.findOne({ email }, (user) => {
-            if (user && password === user.password) {
+            if (email && password === user.password) {
                 res.send({ message: 'Login is a success', user })
             }
             else {

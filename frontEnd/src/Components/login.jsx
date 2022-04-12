@@ -38,11 +38,11 @@ const Login = ({ setLoginUser }) => {
             <form onSubmit={login}>
                 <label className="formLabel" htmlFor='Email'>Email</label>
                 <br />
-                <input type='email' id='sign-in-email' name='email' value={user.email} onChange={handleChange} placeholder='your email' />
+                <input type='email' id='sign-in-email' name='email' value={user.email} onChange={handleChange} placeholder='email' />
                 <br />
                 <label className="formLabel" htmlFor='password'>Password</label>
                 <br />
-                <input type='password' id='sign-in-password' name='password' value={user.password} onChange={handleChange} placeholder='your password' />
+                <input type='password' id='sign-in-password' name='password' value={user.password} onChange={handleChange} placeholder='password' />
                 <br />
                 <input type='submit' value='Login' />
             </form>
