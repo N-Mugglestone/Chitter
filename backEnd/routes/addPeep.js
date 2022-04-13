@@ -4,12 +4,13 @@ import Peeps from '../Models/peepSchema.js';
 
 const router = express.Router();
 
-router.route(`/_id`)
+// router.route(`/_id`)
+router.route('/')
     .post([
-        body(`firstName`).exists(),
-        body(`userHandle`).exists(),
-        body('peepContent').exists(),
-        body(`timeStamp`).exists().isDate(),
+        // body(`firstName`).exists(),
+        // body(`userHandle`).exists(),
+        // body('peepContent').exists(),
+        // body(`timeStamp`).exists().isDate(),
         // body(`lastName`).exists(),
     ],
 
