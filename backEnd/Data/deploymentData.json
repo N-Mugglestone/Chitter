@@ -26,5 +26,12 @@
         "userHandle": "@jenjen",
         "timeStamp": "2022-01-02T08:00:00.000Z",
         "peepContent": "Bed time with a good book"
+    },
+    {
+        "firstName": "Daniel",
+        "secondName": "Scott",
+        "userHandle": "@Magicman",
+        "timeStamp": "2022-03-10T21:00:00.000Z",
+        "peepContent": "Anybody else tired?"
     }
 ]

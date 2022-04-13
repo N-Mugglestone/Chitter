@@ -1,6 +1,6 @@
 import { useState } from "react"
 import PropTypes from "prop-types";
-import { useParams } from 'react-router'
+// import { useParams } from 'react-router'
 import axios from 'axios';
 
 import '../CSS/addPeeps.css'
@@ -11,21 +11,27 @@ const AddPeep = ({ user }) => {
 
     const { firstName, lastName, userHandle } = user;
 
-    const { newAddPeep, setNewAddPeep } = useState('');
-    const { addPeepMessage, setAddPeepMessage } = useState('');
+    const { newAddPeep, setNewAddPeep } = useState('');  // Wrong brackets!
+    const { addPeepMessage, setAddPeepMessage } = useState('');         // Wrong brackets!
 
-    const { _id } = useParams();
+
+    // Not needed as it isn't used
+    // const { _id } = useParams();
 
     const makeNewPeep = async (e) => {
         e.preventDefault();
 
         const date = new Date().toISOString().toString();
 
+        {/* setNewAddPeep is always going to be '' as it is never changed by the textarea */ }
         const newPeep = new Model(firstName, lastName, userHandle, date, newAddPeep)
-
+        console.log(newPeep);
         if (newPeep.length > 0) {
+            // This never enters - length is not the right thing to check on newPeep
+            // You could use Object.keys(newPeep).length - that would be better
             try {
-                const res = await axios.post('http://localhost:4000/addPeep/:_id', newPeep)
+                const res = await axios.post('http://localhost:3000/addPeep/:_id', newPeep)     // localhost:3000!
+                // The _id on the end of this is causing a problem
                 setAddPeepMessage(res.data.message);
                 setNewAddPeep('');
             } catch (err) {
@@ -45,9 +51,11 @@ const AddPeep = ({ user }) => {
                     <h3 className="peepHandle">{userHandle}</h3>
                     <form onSubmit={makeNewPeep}>
                         <textarea type="text" placeholder="Write here..." value={newAddPeep}></textarea>
+                        {/* There is nothing on the textarea to get the value the user types...does it need an onChange? */}
                         {addPeepMessage && <small>{addPeepMessage}</small>}
                         <br />
-                        <input id="newPeepButton" type="submit" value="Peep"></input>
+                        {/* <input id="newPeepButton" type="submit" value="Peep"></input> // inputs should self close */}
+                        <input id="newPeepButton" type="submit" value="Peep" />
                     </form>
                 </div>
             </div>

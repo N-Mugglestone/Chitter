@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types'
-import { Router, Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../CSS/header.css'
 
-const Header = ({ setUserLoggedIn, setLoggedInStatus, userObject }) => {
+const Header = ({ user: { loginUser, setLoginUser } }) => {
 
     const logOut = () => {
-        setUserLoggedIn({});
-        setLoggedInStatus(false);
+        setLoginUser(null)
     }
 
     return (
@@ -14,19 +13,19 @@ const Header = ({ setUserLoggedIn, setLoggedInStatus, userObject }) => {
             <nav>
                 <nav className="navbar navbar-expand-lg navbar-dark">
                     <div className="container-fluid">
-                        <a className="navbar-brand" href='#'>
-                        </a>
+                        <Link className="navbar-brand" to="/">                     </Link>
                         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div className="navbar-nav">
-                                <a className="nav-link" href="/"> <em>Home</em> </a>
+                                <Link className="nav-link" to="/"> <em>Home</em> </Link>
 
-                                <a className="nav-link" href='/register'> <em>Register</em> </a>
+                                {!loginUser && <Link className="nav-link" to="/register"> <em>Register</em> </Link>}
 
-                                <a className="nav-link" href='/login'> <em>Login</em> </a>
+                                {!loginUser && <Link className="nav-link" to="/login"> <em>Login</em> </Link>}
 
-                                <a className="nav-link" href='/' onClick={logOut}> <em>LogOut</em> </a>
+                                {loginUser && <Link className="nav-link" to="/" onClick={logOut}> <em>LogOut</em> </Link>}
 
-                                <a className="nav-link" href='/addPeep'> <em>addPeep</em> </a>
+                                {/* <Link className="nav-link" to="/addPeep"> <em>addPeep</em> </Link> */}
+                                {loginUser && <Link className="nav-link" to={`/addPeep/${loginUser._id}`}> <em>addPeep</em> </Link>}
                             </div>
                         </div>
                     </div>
@@ -35,49 +34,14 @@ const Header = ({ setUserLoggedIn, setLoggedInStatus, userObject }) => {
         </>
     )
 
-    // return (
-    // <>
-    //     <nav>
-    //         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    //             <div class="container-fluid">
-    //                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-    //                     <div class="navbar-nav">
-
-    //                         <NavLink class="nav-link" to="/register"> Register</NavLink>
-
-
-
-    //                         <NavLink class="nav-link" to="/"> Home </NavLink>
-
-
-
-    //                         <NavLink class="nav-link" to="/login"> Login </NavLink>
-
-
-
-    //                         <NavLink class="nav-link" to="/" onClick={logOut}> logOut</NavLink>
-
-
-
-    //                         <NavLink class="nav-link" to={`/post/${userObject?._id}`}> addPeep </NavLink>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //         </nav>
-    //     </nav >
-    //</>
-    // )
-
 
 }
 
 Header.propTypes = {
-    user: PropTypes.bool,
-    setUserLoggedIn: PropTypes.func,
-    setUserLoggedInStatus: PropTypes.oneOfType([
-        PropTypes.bool,
-        PropTypes.object
-    ])
+    user: PropTypes.exact({
+        loginUser: PropTypes.object,
+        setLoginUser: PropTypes.func
+    })
 }
 
 export default Header;

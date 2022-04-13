@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react';
+// import { useState } from 'react';
 
 
 function Peeps({ peepBody }) {
 
-    const { firstName, lastName, userHandle, timeStamp, peepContent } = peepBody;
+    const { firstName, userHandle, timeStamp, peepContent } = peepBody;
     const formattedDate = new Date(timeStamp).toDateString()
 
     return (
         <>
-            <div class="card">
-                <div class="container">
-                    <h4 className='PeepName'>{firstName}{lastName}</h4>
+            <div className="card">
+                <div className="container">
+                    <h4 className='PeepName'>{firstName}</h4>
                     <h2>{userHandle}</h2>
                     <h5> {formattedDate}</h5>
                     <p> {peepContent} </p>

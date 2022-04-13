@@ -19,7 +19,7 @@ const host = process.env.HOST;
 
 app.use(morgan('tiny'));
 app.use(express.json());
-app.use(express.urlencoded());
+// app.use(express.urlencoded());   Do not put back in!
 app.use(cors());
 
 app.use('/', home)
