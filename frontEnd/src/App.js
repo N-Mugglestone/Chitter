@@ -7,8 +7,6 @@ import HomePage from "./Components/homePage.jsx";
 import Login from './Components/login.jsx';
 import AddPeep from '../src/Components/utils/AddPeep.jsx'
 import Register from './Components/Register.jsx';
-// import Wall from "./Components/utils/Wall.jsx";
-
 
 
 function App() {
@@ -23,12 +21,7 @@ function App() {
         <Routes>
 
           <Route path="/" element={<HomePage loginUser={loginUser} />} />
-          {/*
-          //   <>
-          //     {loginUser ? <HomePage component={<Wall currentUser={loginUser} />} id={"Wall"} /> : < Navigate to="/login" />}
-          //   </>
-          // } />
-  */}
+
           <Route path="/login" element={<Login user={{ loginUser, setLoginUser }} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/addPeep" element={<AddPeep user={loginUser} />} />
@@ -41,7 +34,6 @@ function App() {
     </>
   )
 }
-
 
 export default App;
 

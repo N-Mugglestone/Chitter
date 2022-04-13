@@ -13,8 +13,7 @@ const Header = ({ user: { loginUser, setLoginUser } }) => {
             <nav>
                 <nav className="navbar navbar-expand-lg navbar-dark">
                     <div className="container-fluid">
-                        <Link className="navbar-brand" to="/" >
-                        </Link>
+                        <Link className="navbar-brand" to="/" ></Link>
                         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div className="navbar-nav">
                                 <Link className="nav-link" href="/"> <em>Home</em> </Link>

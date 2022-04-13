@@ -24,7 +24,7 @@ const Login = ({ user: { loginUser, setLoginUser } }) => {
     const login = async (e) => {
         e.preventDefault();
 
-        const res = await axios.post('http://localhost:3000/login', user)
+        const res = await axios.post('http://localhost:3000/login/', user)
         alert(res.data.message);
         // setLoggedIn(res.data.user ? true : false);
         setUser({ email: '', password: '' });
