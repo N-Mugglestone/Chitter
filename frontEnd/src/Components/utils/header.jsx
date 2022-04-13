@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { Router, Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../CSS/header.css'
 
 const Header = ({ user: { loginUser, setLoginUser } }) => {
@@ -17,15 +17,15 @@ const Header = ({ user: { loginUser, setLoginUser } }) => {
                         </a>
                         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div className="navbar-nav">
-                                <a className="nav-link" href="/"> <em>Home</em> </a>
+                                <Link className="nav-link" href="/"> <em>Home</em> </Link>
 
-                                {!loginUser && <a className="nav-link" href='/register'> <em>Register</em> </a>}
+                                {!loginUser && <Link className="nav-link" href='/register'> <em>Register</em> </Link>}
 
-                                {!loginUser && <a className="nav-link" href='/login'> <em>Login</em> </a>}
+                                {!loginUser && <Link className="nav-link" href='/login'> <em>Login</em> </Link>}
 
-                                {loginUser && <a className="nav-link" href='/' onClick={logOut}> <em>LogOut</em> </a>}
+                                {loginUser && <Link className="nav-link" href='/' onClick={logOut}> <em>LogOut</em> </Link>}
 
-                                <a className="nav-link" href='/addPeep'> <em>addPeep</em> </a>
+                                <Link className="nav-link" href='/addPeep'> <em>addPeep</em> </Link>
                             </div>
                         </div>
                     </div>
