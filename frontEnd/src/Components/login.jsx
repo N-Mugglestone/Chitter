@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { Link, Navigate } from 'react-router-dom'
+import { Link, Navigate, useLocation } from 'react-router-dom'
 import './CSS/login.css'
 
 const Login = ({ user: { loginUser, setLoginUser } }) => {

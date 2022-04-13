@@ -24,7 +24,7 @@ const AddPeep = ({ user }) => {
 
         if (Object.keys(newPeep).length) {
             try {
-                const res = await axios.post('http://localhost:4000/addPeep', newPeep)
+                const res = await axios.post('http://localhost:3000/addPeep:_id', newPeep)
                 setAddPeepMessage(res.data.message);
                 setNewAddPeep('');
             } catch (err) {
@@ -46,7 +46,7 @@ const AddPeep = ({ user }) => {
                         <textarea type="text" placeholder="Write here..." value={newAddPeep}></textarea>
                         {addPeepMessage && <small>{addPeepMessage}</small>}
                         <br />
-                        <input id="newPeepButton" type="submit" value="Peep"></input>
+                        <input id="newPeepButton" type="submit" value="Peep" />
                     </form>
                 </div>
             </div>
