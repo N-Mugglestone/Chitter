@@ -7,7 +7,7 @@ import HomePage from "./Components/homePage.jsx";
 import Login from './Components/login.jsx';
 import AddPeep from '../src/Components/utils/AddPeep.jsx'
 import Register from './Components/Register.jsx';
-import Wall from "./Components/utils/Wall.jsx";
+// import Wall from "./Components/utils/Wall.jsx";
 
 
 
@@ -29,9 +29,10 @@ function App() {
           //   </>
           // } />
   */}
-          <Route path="/login" element={<Login setLoginUser={setLoginUser} />} />
+          <Route path="/login" element={<Login user={{ loginUser, setLoginUser }} />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/addPeep/:_id" element={<AddPeep user={loginUser} />} />
+          <Route path="/addPeep" element={<AddPeep user={loginUser} />} />
+          <Route path="*" element={<Navigate to="/" />} />
 
         </Routes>
         <Footer />

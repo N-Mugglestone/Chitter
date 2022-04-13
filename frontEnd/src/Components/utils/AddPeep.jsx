@@ -1,6 +1,6 @@
 import { useState } from "react"
 import PropTypes from "prop-types";
-import { useParams } from 'react-router'
+// import { useParams } from 'react-router'
 import axios from 'axios';
 
 import '../CSS/addPeeps.css'
@@ -11,10 +11,9 @@ const AddPeep = ({ user }) => {
 
     const { firstName, lastName, userHandle } = user;
 
-    const { newAddPeep, setNewAddPeep } = useState('');
-    const { addPeepMessage, setAddPeepMessage } = useState('');
+    const [newAddPeep, setNewAddPeep] = useState('');
+    const [addPeepMessage, setAddPeepMessage] = useState('');
 
-    const { _id } = useParams();
 
     const makeNewPeep = async (e) => {
         e.preventDefault();
@@ -23,9 +22,9 @@ const AddPeep = ({ user }) => {
 
         const newPeep = new Model(firstName, lastName, userHandle, date, newAddPeep)
 
-        if (newPeep.length > 0) {
+        if (Object.keys(newPeep).length) {
             try {
-                const res = await axios.post('http://localhost:4000/addPeep/:_id', newPeep)
+                const res = await axios.post('http://localhost:4000/addPeep', newPeep)
                 setAddPeepMessage(res.data.message);
                 setNewAddPeep('');
             } catch (err) {
@@ -35,7 +34,7 @@ const AddPeep = ({ user }) => {
 
     }
 
-    // form action="/Wall" ---------push to json file? push to the wall array? 
+
     return (
         <>
             <div id="postComponent">
