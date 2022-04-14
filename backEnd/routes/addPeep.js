@@ -5,8 +5,9 @@ import Peeps from '../Models/peepSchema.js';
 const router = express.Router();
 
 // router.route(`/_id`)
-router.route('/')
+router.route(`/`)
     .post([
+        // If you add these back in, make sure they work
         // body(`firstName`).exists(),
         // body(`userHandle`).exists(),
         // body('peepContent').exists(),
@@ -15,7 +16,7 @@ router.route('/')
     ],
 
         (req, res) => {
-
+            console.log(req.body);
             const newPeep = new Peeps(req.body);
 
             newPeep.save(err => {

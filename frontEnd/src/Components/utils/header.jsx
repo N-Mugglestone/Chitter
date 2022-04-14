@@ -13,17 +13,18 @@ const Header = ({ user: { loginUser, setLoginUser } }) => {
             <nav>
                 <nav className="navbar navbar-expand-lg navbar-dark">
                     <div className="container-fluid">
-                        <Link className="navbar-brand" to="/" ></Link>
+                        <Link className="navbar-brand" to="/">                     </Link>
                         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div className="navbar-nav">
-                                <Link className="nav-link" href="/"> <em>Home</em> </Link>
+                                <Link className="nav-link" to="/"> <em>Home</em> </Link>
 
-                                {!loginUser && <Link className="nav-link" href='/register'> <em>Register</em> </Link>}
+                                {!loginUser && <Link className="nav-link" to="/register"> <em>Register</em> </Link>}
 
-                                {!loginUser && <Link className="nav-link" href='/login'> <em>Login</em> </Link>}
+                                {!loginUser && <Link className="nav-link" to="/login"> <em>Login</em> </Link>}
 
-                                {loginUser && <Link className="nav-link" href='/' onClick={logOut}> <em>LogOut</em> </Link>}
+                                {loginUser && <Link className="nav-link" to="/" onClick={logOut}> <em>LogOut</em> </Link>}
 
+                                {/* <Link className="nav-link" to="/addPeep"> <em>addPeep</em> </Link> */}
                                 {loginUser && <Link className="nav-link" to={`/addPeep/${loginUser._id}`}> <em>addPeep</em> </Link>}
                             </div>
                         </div>

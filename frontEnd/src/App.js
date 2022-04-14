@@ -8,7 +8,6 @@ import Login from './Components/login.jsx';
 import AddPeep from '../src/Components/utils/AddPeep.jsx'
 import Register from './Components/Register.jsx';
 
-
 function App() {
 
   const [loginUser, setLoginUser] = useState()
@@ -21,10 +20,17 @@ function App() {
         <Routes>
 
           <Route path="/" element={<HomePage loginUser={loginUser} />} />
-
+          {/*
+          //   <>
+          //     {loginUser ? <HomePage component={<Wall currentUser={loginUser} />} id={"Wall"} /> : < Navigate to="/login" />}
+          //   </>
+          // } />
+  */}
+          {/* <Route path="/login" element={<Login setLoginUser={setLoginUser} />} /> */}
           <Route path="/login" element={<Login user={{ loginUser, setLoginUser }} />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/addPeep" element={<AddPeep user={loginUser} />} />
+          {/* <Route path="/addPeep/:_id" element={<AddPeep user={loginUser} />} /> */}
+          <Route path="/addPeep/:_id" element={<AddPeep user={loginUser} />} />
           <Route path="*" element={<Navigate to="/" />} />
 
         </Routes>
