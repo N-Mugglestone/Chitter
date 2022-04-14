@@ -11,13 +11,15 @@ const AddPeep = ({ user }) => {
 
     const { firstName, lastName, userHandle } = user;
 
-    const [newAddPeep, setNewAddPeep] = useState('');
-    const [addPeepMessage, setAddPeepMessage] = useState('');
+    const { newAddPeep, setNewAddPeep } = useState('');  // Wrong brackets!
+    const { addPeepMessage, setAddPeepMessage } = useState('');         // Wrong brackets!
 
+
+    // Not needed as it isn't used
+    // const { _id } = useParams();
 
     const makeNewPeep = async (e) => {
         e.preventDefault();
-
         const date = new Date().toISOString().toString();
 
         const newPeep = new Model(firstName, lastName, userHandle, date, newAddPeep)
@@ -31,7 +33,6 @@ const AddPeep = ({ user }) => {
                 setAddPeepMessage('There are issues, try again')
             }
         }
-
     }
 
 
@@ -44,8 +45,10 @@ const AddPeep = ({ user }) => {
                     <h3 className="peepHandle">{userHandle}</h3>
                     <form onSubmit={makeNewPeep}>
                         <textarea type="text" placeholder="Write here..." value={newAddPeep}></textarea>
+                        {/* There is nothing on the textarea to get the value the user types...does it need an onChange? */}
                         {addPeepMessage && <small>{addPeepMessage}</small>}
                         <br />
+                        {/* <input id="newPeepButton" type="submit" value="Peep"></input> // inputs should self close */}
                         <input id="newPeepButton" type="submit" value="Peep" />
                     </form>
                 </div>
