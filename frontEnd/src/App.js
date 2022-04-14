@@ -20,16 +20,9 @@ function App() {
         <Routes>
 
           <Route path="/" element={<HomePage loginUser={loginUser} />} />
-          {/*
-          //   <>
-          //     {loginUser ? <HomePage component={<Wall currentUser={loginUser} />} id={"Wall"} /> : < Navigate to="/login" />}
-          //   </>
-          // } />
-  */}
-          {/* <Route path="/login" element={<Login setLoginUser={setLoginUser} />} /> */}
+
           <Route path="/login" element={<Login user={{ loginUser, setLoginUser }} />} />
           <Route path="/register" element={<Register />} />
-          {/* <Route path="/addPeep/:_id" element={<AddPeep user={loginUser} />} /> */}
           <Route path="/addPeep/:_id" element={<AddPeep user={loginUser} />} />
           <Route path="*" element={<Navigate to="/" />} />
 
@@ -43,45 +36,3 @@ function App() {
 
 export default App;
 
-
-
-
-
-
-// function App() {
-
-//   const [peeps, setPeeps] = useState(mockData);
-
-//   const handlePostPeeps = (content) => {
-//     const newPeeps = {
-//       content,
-//       id: nanoid(),
-//       created_on: Date(Date.now()),
-//       user: CURRENT_USER,
-//     };
-//     setPeeps([...peeps, newPeeps])
-//   }
-
-//   return (
-//     <div className="app">
-//       <ComposeForm onSubmit={handlePostPeep} />
-//       <div className="separator"></div>
-//       <TimeStamp peeps={peeps} />
-//     </div>
-//   );
-// };
-
-
-
-
-//function App() {
-//   return (
-//     <>
-//       <head> CHITTER </head>
-//       <Header />
-//       <HomePage />
-
-//       <Footer />
-//     </>
-//   )
-// };

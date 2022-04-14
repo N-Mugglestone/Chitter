@@ -23,6 +23,3 @@ TimeStamp.propTypes = {
 };
 
 export default TimeStamp;
-
-//moment - <p className="peepDate4">
-// <p className="peepDate4>" Posted:  moment(peep.timestamp).format("Do MMMM YYYY, h:mm a") }

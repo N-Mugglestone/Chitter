@@ -24,7 +24,6 @@ const Header = ({ user: { loginUser, setLoginUser } }) => {
 
                                 {loginUser && <Link className="nav-link" to="/" onClick={logOut}> <em>LogOut</em> </Link>}
 
-                                {/* <Link className="nav-link" to="/addPeep"> <em>addPeep</em> </Link> */}
                                 {loginUser && <Link className="nav-link" to={`/addPeep/${loginUser._id}`}> <em>addPeep</em> </Link>}
                             </div>
                         </div>

@@ -4,7 +4,6 @@ export default class Model {
         this.secondName = secondName;
         this.userHandle = userHandle;
         this.timeStamp = timeStamp;
-        // this.peepBody = peepBody;
         this.peepContent = peepBody;
     }
 }
