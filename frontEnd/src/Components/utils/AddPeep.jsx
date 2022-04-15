@@ -38,7 +38,7 @@ const AddPeep = ({ user }) => {
                 <div>
                     <h1> Make a new Peep </h1>
                     <h2 className="peepName">{firstName} {lastName}</h2>
-                    <h3 className="peepHandle">{userHandle}</h3>
+                    <h3 className="userHandle">{userHandle}</h3>
                     <form onSubmit={makeNewPeep}>
                         <textarea
                             onChange={e => setNewAddPeep(e.target.value)} type="text" placeholder="Write here..." value={newAddPeep} ></textarea>
@@ -64,5 +64,3 @@ AddPeep.propTypes = {
 }
 
 export default AddPeep;
-
-

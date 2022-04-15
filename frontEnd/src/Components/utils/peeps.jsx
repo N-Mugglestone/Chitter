@@ -11,7 +11,7 @@ function Peeps({ peepBody }) {
             <div className="card">
                 <div className="container">
                     <h4 className='PeepName'>{firstName}</h4>
-                    <h2>{userHandle}</h2>
+                    <h2 className='userHandle'>{userHandle}</h2>
                     <h5> {formattedDate}</h5>
                     <p> {peepContent} </p>
 
