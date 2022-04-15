@@ -40,7 +40,8 @@ const AddPeep = ({ user }) => {
                     <h2 className="peepName">{firstName} {lastName}</h2>
                     <h3 className="peepHandle">{userHandle}</h3>
                     <form onSubmit={makeNewPeep}>
-                        <textarea type="text" placeholder="Write here..." value={newAddPeep}></textarea>
+                        <textarea
+                            onChange="submit" type="text" placeholder="Write here..." value={newAddPeep}></textarea>
                         {/* There is nothing on the textarea to get the value the user types...does it need an onChange? */}
                         {addPeepMessage && <small>{addPeepMessage}</small>}
                         <br />

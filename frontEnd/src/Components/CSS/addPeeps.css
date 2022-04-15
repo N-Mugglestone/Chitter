@@ -18,5 +18,8 @@ textarea {
   background-color: lightgreen;
   font-size: 20px;
   resize: none;
+}
 
+h2 {
+  text-align: center;
 }
