@@ -22,7 +22,7 @@ const AddPeep = ({ user }) => {
 
         if (Object.keys(newPeep).length) {
             try {
-                const res = await axios.post('http://localhost:3000/addPeep:_id', newPeep)
+                const res = await axios.post('http://localhost:3000/addPeep/', newPeep)
                 setAddPeepMessage(res.data.message);
                 setNewAddPeep('');
             } catch (err) {
@@ -41,8 +41,7 @@ const AddPeep = ({ user }) => {
                     <h3 className="peepHandle">{userHandle}</h3>
                     <form onSubmit={makeNewPeep}>
                         <textarea
-                            onChange="submit" type="text" placeholder="Write here..." value={newAddPeep}></textarea>
-                        {/* There is nothing on the textarea to get the value the user types...does it need an onChange? */}
+                            onChange={e => setNewAddPeep(e.target.value)} type="text" placeholder="Write here..." value={newAddPeep} ></textarea>
                         {addPeepMessage && <small>{addPeepMessage}</small>}
                         <br />
                         <input id="newPeepButton" type="submit" value="Peep" />
