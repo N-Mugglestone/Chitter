@@ -1,19 +1,10 @@
 import express from 'express';
-import { body } from 'express-validator';
 import Peeps from '../Models/peepSchema.js';
 
 const router = express.Router();
 
-// router.route(`/_id`)
 router.route(`/`)
-    .post([
-        // If you add these back in, make sure they work
-        // body(`firstName`).exists(),
-        // body(`userHandle`).exists(),
-        // body('peepContent').exists(),
-        // body(`timeStamp`).exists().isDate(),
-        // body(`lastName`).exists(),
-    ],
+    .post([[]],
 
         (req, res) => {
             console.log(req.body);
@@ -30,15 +21,3 @@ router.route(`/`)
         })
 
 export { router as addPeep };
-
-
-// router.route('/')
-//     .get((req, res) => {
-//         Peeps.find().sort('-date').find({}, function (err, result) {
-//             if (err) {
-//                 console.log(err);
-//             } else {
-//                 res.json(result);
-//             }
-//         })
-

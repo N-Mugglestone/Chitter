@@ -1,28 +1,33 @@
-form{
-text-align: center;
-font-size: 30px;
+form {
+    text-align: center;
+    font-size: 30px;
 }
 
-input[type=submit], select{
+input[type=submit],
+select {
     width: 200px;
     height: 30px;
     font-size: large;
 }
 
-input[type=text], select{
+input[type=text],
+select {
     width: 250px;
     height: 30px;
 }
 
-input[type=email], select{
-    width: 250px;
-    height: 30px;
-}
-input[type=password], select{
+input[type=email],
+select {
     width: 250px;
     height: 30px;
 }
 
-p{
+input[type=password],
+select {
+    width: 250px;
+    height: 30px;
+}
+
+p {
     text-align: center;
 }
