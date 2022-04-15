@@ -50,7 +50,9 @@ const AddPeep = ({ user }) => {
             </div>
         </>
     )
+
 }
+
 
 AddPeep.propTypes = {
     user: PropTypes.oneOfType([

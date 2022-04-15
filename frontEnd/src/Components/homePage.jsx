@@ -19,8 +19,9 @@ const HomePage = ({ loginUser }) => {
                     <img src={peepPhoto3} alt='The dog' />
                 </div>
                 <div className="column">
-                    {loginUser && <Wall />}
-                    {!loginUser && <Navigate to="/login" />}
+                    {/* {loginUser && <Wall />} */}
+                    <Wall />
+                    {/* {!loginUser && <Navigate to="/login" />} */}
                 </div>
 
                 <div className="column">

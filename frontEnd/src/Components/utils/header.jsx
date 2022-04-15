@@ -16,7 +16,10 @@ const Header = ({ user: { loginUser, setLoginUser } }) => {
                         <Link className="navbar-brand" to="/">                     </Link>
                         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div className="navbar-nav">
-                                <Link className="nav-link" to="/"> <em>Home</em> </Link>
+
+                                {!loginUser && <Link className="nav-link" to="/"> <em>Home</em> </Link>}
+
+                                {loginUser && <Link className="nav-link" to="/"> <em>Home</em> </Link>}
 
                                 {!loginUser && <Link className="nav-link" to="/register"> <em>Register</em> </Link>}
 

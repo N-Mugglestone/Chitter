@@ -6,7 +6,7 @@ function TimeStamp({ peeps }) {
     return (
         <ul className="timeStamp">
             {peeps
-                .sort((a, b) => new Date(b.created_on) - new Date(a.created_on))
+                .sort((a, b) => new Date(b.date) - new Date(a.date))
                 .map(({ id, user, created_on, content }) => (
                     <li key={id} className="timeStamp-item">
                         <Peeps user={user} createdOn={created_on}>

@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import Peeps from "./peeps";
-// import peepsArrayExternal from './deploymentData.json'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -16,7 +15,6 @@ const Wall = () => {
         getPeeps();
     }, [])
 
-
     const peeps = peepsArray?.map(peep => {
         return <Peeps key={peep?._id} peepBody={peep} />
     })
@@ -31,5 +29,7 @@ const Wall = () => {
 Wall.prototype = {
     peepsArray: PropTypes.array
 }
+
+// Wall.sort((a, b) => a.getTime() - b.getTime())
 
 export default Wall;

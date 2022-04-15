@@ -8,6 +8,8 @@ const peepSchema = new mongoose.Schema({
     peepContent: { type: String, required: true }
 });
 
+db.peeps.find().sort({ age: -1 })
+
 const Peep = mongoose.model("Peep", peepSchema)
 
 export default Peep;
