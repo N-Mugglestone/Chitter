@@ -8,7 +8,7 @@ import Model from './Model.jsx';
 
 const AddPeep = ({ user }) => {
 
-    const { firstName, lastName, userHandle } = user;
+    const { firstName, secondName, userHandle } = user;
 
     const [newAddPeep, setNewAddPeep] = useState('');
     const [addPeepMessage, setAddPeepMessage] = useState('');
@@ -18,7 +18,7 @@ const AddPeep = ({ user }) => {
         e.preventDefault();
         const date = new Date().toISOString().toString();
 
-        const newPeep = new Model(firstName, lastName, userHandle, date, newAddPeep)
+        const newPeep = new Model(firstName, secondName, userHandle, date, newAddPeep)
 
         if (Object.keys(newPeep).length) {
             try {
@@ -37,7 +37,7 @@ const AddPeep = ({ user }) => {
             <div id="postComponent">
                 <div>
                     <h1> Make a new Peep </h1>
-                    <h2 className="peepName">{firstName} {lastName}</h2>
+                    <h2 className="peepName">{firstName} {secondName}</h2>
                     <h3 className="userHandle">{userHandle}</h3>
                     <form onSubmit={makeNewPeep}>
                         <textarea
@@ -59,7 +59,7 @@ AddPeep.propTypes = {
         PropTypes.bool,
         PropTypes.shape({
             firstName: PropTypes.string,
-            lastName: PropTypes.string,
+            secondName: PropTypes.string,
             userHandle: PropTypes.string
         })
     ])

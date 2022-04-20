@@ -6,7 +6,7 @@ import './CSS/register.css'
 const Register = () => {
     const [newUser, setNewUser] = useState({
         firstName: '',
-        lastName: '',
+        secondName: '',
         email: '',
         userHandle: '',
         password: ''
@@ -15,13 +15,13 @@ const Register = () => {
 
     const register = async (e) => {
         e.preventDefault()
-        const { firstName, lastName, email, userHandle, password } = newUser;
-        if (firstName && lastName && email && userHandle && password) {
+        const { firstName, secondName, email, userHandle, password } = newUser;
+        if (firstName && secondName && email && userHandle && password) {
             try {
                 const res = await axios.post('http://localhost:3000/register', newUser)
                 setNewUser({
                     firstName: '',
-                    lastName: '',
+                    secondName: '',
                     email: '',
                     userHandle: '',
                     password: '',
@@ -64,9 +64,9 @@ const Register = () => {
                 <br />
                 <input type="text" id="user-first-name" name="firstName" value={newUser.firstName} onChange={handleChange} placeholder="FirstName" />
                 <br />
-                <label className="formLabel" htmlFor='lastName'>Last name</label>
+                <label className="formLabel" htmlFor='secondName'>Last name</label>
                 <br />
-                <input type="text" id="user-last-name" name="lastName" value={newUser.lastName} onChange={handleChange} placeholder="LastName" />
+                <input type="text" id="user-second-name" name="secondName" value={newUser.secondName} onChange={handleChange} placeholder="SecondName" />
                 <br />
                 <label className="formLabel" htmlFor='email'>Email</label>
                 <br />
