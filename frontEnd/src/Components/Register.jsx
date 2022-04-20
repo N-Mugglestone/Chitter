@@ -74,7 +74,7 @@ const Register = () => {
                 <br />
                 <label className="formLabel" htmlFor="userHandle">User handle</label>
                 <br />
-                <input type="text" id="user-handle-name" name="userHandle" value={newUser.userHandle} onChange={handleChange} placeholder="UserHandle" />
+                <input type="text" id="user-handle-name" name="userHandle" value={newUser.userHandle} onChange={handleChange} placeholder="E.g. @userHandle" />
                 <br />
                 <label className="formLabel" htmlFor='password'>Password</label>
                 <br />
