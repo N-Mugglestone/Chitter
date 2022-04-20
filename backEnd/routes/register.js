@@ -7,7 +7,7 @@ const router = express.Router();
 router.route(`/`)
     .post([
         body('firstName').exists(),
-        body('lastName').exists(),
+        body('secondName').exists(),
         body('email').exists().normalizeEmail().escape().isEmail(),
         body('userHandle').exists(),
         body('password').exists(),
